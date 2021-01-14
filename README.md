@@ -1,7 +1,7 @@
 # BanHammer API
 Ban hammer API is an API for punishment plugin devs to implement. Other plugins that depend on Punishment use BanHammer instead of using all punishment plugin API.
 
-#How to use
+# How to use
 
 First, you need to create a new class that implements BanPlugin. implement all methods and finally registering them into the plugin.
 
