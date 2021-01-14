@@ -27,6 +27,7 @@ public class BanHammer extends JavaPlugin {
 
     public void setBanPlugin(BanPlugin plugin, Plugin mainClass) {
         if (!canRegister) return;
+        if (mainClass == this) return;
         this.banPlugin = plugin;
         this.banPluginMainClass = mainClass;
     }
