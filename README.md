@@ -40,3 +40,15 @@ Insert the following into your pom.xml
  </dependencies>
 ```
 
+for gradle:
+```gradle
+repositories {
+	//other repositories
+	maven { url 'https://jitpack.io' }
+}
+dependencies {
+    //other dependencies
+	implementation 'com.github.BlueTree242:BanHammer:master-SNAPSHOT'
+}
+```
+
