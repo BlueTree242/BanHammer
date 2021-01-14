@@ -11,7 +11,7 @@ First, you need to create a new class that implements BanPlugin. implement all m
 Simply get an instance of main class of plugin **BanHammer** and use the following:
 ```java
 public class YourMainClass extends JavaPlugin{
-  public void onEnable() {
+  public void onLoad() /*onLoad because it won't register if BanHammer is enabled (sometimes when server start but onLoad is recommended)*/{
     //other code
     banhammerInstance.setBanPlugin(BanHammerImplementation, this); //"this" is your main class
  }
