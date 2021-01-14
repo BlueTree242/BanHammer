@@ -4,6 +4,8 @@ import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
+import tech.bedev.banhammer.events.PlayerPunishmentEvent;
+import tech.bedev.banhammer.events.PlayerRevokePunishmentEvent;
 
 public class BanHammer extends JavaPlugin {
     private BanPlugin banPlugin = null;
@@ -42,5 +44,16 @@ public class BanHammer extends JavaPlugin {
     }
     public BanPlugin getBanPlugin() {
         return banPlugin;
+    }
+
+    public void firePunishmentEvent(Plugin plugin, Punishment punishment) {
+        if (plugin == banPluginMainClass) {
+            Bukkit.getPluginManager().callEvent(new PlayerPunishmentEvent(punishment, plugin, this));
+        }
+    }
+    public void fireRevokePunishmentEvent(Plugin plugin, Punishment punishment) {
+        if (plugin == banPluginMainClass) {
+            Bukkit.getPluginManager().callEvent(new PlayerRevokePunishmentEvent(punishment, plugin, this));
+        }
     }
 }
