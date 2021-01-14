@@ -26,8 +26,13 @@ public class BanHammer extends JavaPlugin {
     }
 
     public void setBanPlugin(BanPlugin plugin, Plugin mainClass) {
-        if (!canRegister) return;
-        if (mainClass == this) return;
+        if (!canRegister) {
+            throw new IllegalStateException("Registering is disabled");
+        }
+        if (mainClass == this) {
+            throw new IllegalArgumentException("Main class cannot be BanHammer's Main Class!");
+        }
+
         this.banPlugin = plugin;
         this.banPluginMainClass = mainClass;
     }
