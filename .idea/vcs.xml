@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$/Advancedban/AdvancedBan" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Bedwars/BedWars1058-TeamSelector" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Blue Develepors Bot" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/BlueCraft" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/DiscordBot" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/DiscordSRV-Staff-chat" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/DiscordSRV-Staff-chat/Staff-Chat" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/DiscordSRVUtils" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/GroupSpawn" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/IntelliJ bot" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/SuperCore" vcs="Git" />
+  </component>
+</project>

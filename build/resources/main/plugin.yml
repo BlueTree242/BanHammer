@@ -1,0 +1,5 @@
+name: BanHammer
+version: 1.0
+author: Blue_TreeDev
+description: An API for punishments other plugins implement so other plugins doesn't have to use all Punishment plugins.
+main: tech.bedev.banhammer.BanHammer
