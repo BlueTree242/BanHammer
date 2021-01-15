@@ -11,8 +11,8 @@ public interface Punishment {
     String getOperator();
     boolean isPermanent();
     boolean isExpired();
-    String getPunishDate();
-    String getEndDate();
+    Long getPunishDate();
+    Long getEndDate();
     void unPunish();
     UUID getUUID();
     String toString();
