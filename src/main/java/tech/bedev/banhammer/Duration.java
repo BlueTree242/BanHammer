@@ -2,8 +2,8 @@ package tech.bedev.banhammer;
 
 import java.util.concurrent.TimeUnit;
 
-public class DurationCreator {
-    public DurationCreator(Long start, Long end) {
+public class Duration {
+    public Duration(Long start, Long end) {
         if (start != null) this.start = start;
         if (end != null) this.end = end;
     }
@@ -32,26 +32,27 @@ public class DurationCreator {
             val = days + " Days";
         }
         if (hours != 0) {
-            if (val.equals("")) {
+            if (val.isEmpty()) {
                 val = days + " hours";
             } else {
                 val = val + ", " + hours + " hours";
             }
         }
         if (minutes != 0) {
-            if (val.equals("")) {
+            if (val.isEmpty()) {
                 val = minutes + " minutes";
             } else {
                 val = val + ", " + minutes + " minutes";
             }
         }
         if (seconds != 0) {
-            if (val.equals("")) {
+            if (val.isEmpty()) {
                 val = seconds + " seconds";
             } else {
                 val = val + ", " + seconds + " seconds";
             }
         }
+        if (val.isEmpty()) return "less than a second";
         return val;
     }
 

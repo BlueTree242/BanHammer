@@ -13,7 +13,7 @@ Simply get an instance of main class of plugin **BanHammer** and use the followi
 public class YourMainClass extends JavaPlugin{
   public void onLoad() /*onLoad because it won't register if BanHammer is enabled (sometimes when server finishes starting but onLoad is recommended)*/{
     //other code
-    banhammerInstance.setBanPlugin(BanHammerImplementation, this); //"this" is your main class
+    banhammerInstance.setPunishmentsPlugin(BanHammerImplementation, this); //"this" is your main class
  }
 }
 ```

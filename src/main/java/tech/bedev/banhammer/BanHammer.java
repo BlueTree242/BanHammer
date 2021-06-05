@@ -9,13 +9,13 @@ import tech.bedev.banhammer.events.PlayerRevokePunishmentEvent;
 
 public class BanHammer extends JavaPlugin {
     private BanPlugin banPlugin = null;
-    private Plugin banPluginMainClass = null;
+    private Plugin punishmentPluginMainClass = null;
     boolean canRegister = true;
 
     public void onEnable() {
         Bukkit.getScheduler().runTask(this, () -> {
-          if (banPluginMainClass != null) {
-              getLogger().info(ChatColor.GREEN + "Plugin " + ChatColor.RED + banPluginMainClass.getName() + " v." + banPluginMainClass.getDescription().getVersion() + ChatColor.GREEN + " is the ban manager.");
+          if (punishmentPluginMainClass != null) {
+              getLogger().info(ChatColor.GREEN + "Plugin " + ChatColor.RED + punishmentPluginMainClass.getName() + " v." + punishmentPluginMainClass.getDescription().getVersion() + ChatColor.GREEN + " is the ban manager.");
             } else {
               getLogger().info(ChatColor.GREEN + "No plugins registered.");
             }
@@ -27,7 +27,7 @@ public class BanHammer extends JavaPlugin {
 
     }
 
-    public void setBanPlugin(BanPlugin plugin, Plugin mainClass) {
+    public void setPunishmentsPlugin(BanPlugin plugin, Plugin mainClass) {
         if (!canRegister) {
             throw new IllegalStateException("Registering is disabled");
         }
@@ -36,23 +36,23 @@ public class BanHammer extends JavaPlugin {
         }
 
         this.banPlugin = plugin;
-        this.banPluginMainClass = mainClass;
+        this.punishmentPluginMainClass = mainClass;
     }
 
     public String getBanPluginName() {
-        return banPluginMainClass.getName();
+        return punishmentPluginMainClass.getName();
     }
     public BanPlugin getBanPlugin() {
         return banPlugin;
     }
 
     public void firePunishmentEvent(Plugin plugin, Punishment punishment) {
-        if (plugin == banPluginMainClass) {
+        if (plugin == punishmentPluginMainClass) {
             Bukkit.getPluginManager().callEvent(new PlayerPunishmentEvent(punishment, plugin, this));
         }
     }
     public void fireRevokePunishmentEvent(Plugin plugin, Punishment punishment) {
-        if (plugin == banPluginMainClass) {
+        if (plugin == punishmentPluginMainClass) {
             Bukkit.getPluginManager().callEvent(new PlayerRevokePunishmentEvent(punishment, plugin, this));
         }
     }
